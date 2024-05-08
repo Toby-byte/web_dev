@@ -1,7 +1,3 @@
-# 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
-
-# https://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@github.com/Toby-byte/web_dev.git
-
 from bottle import default_app, get, post, run
 import git
  
@@ -17,7 +13,7 @@ def git_update():
 ##############################
 @get("/")
 def _():
-  return "Three"
+  return "three"
  
 ##############################
 try:
