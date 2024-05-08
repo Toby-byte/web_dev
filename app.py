@@ -11,6 +11,16 @@ from icecream import ic
 import bcrypt
 import json
 import credentials
+import git
+
+##############################
+@post('/secret_url_for_git_hook')
+def git_update():
+  repo = git.Repo('./web_dev')
+  origin = repo.remotes.origin
+  repo.create_head('main', origin.refs.main).set_tracking_branch(origin.refs.main).checkout()
+  origin.pull()
+  return ""
 
 ##############################
 @get("/app.css")
