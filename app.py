@@ -314,10 +314,11 @@ def _(key):
 
 ##############################
 try:
-    import production
-    application = default_app()
-except:
-    run(host="0.0.0.0", port=80, debug=True, reloader=True, interval=0)
+  import production
+  application = default_app()
+except Exception as ex:
+  print("Running local server")
+  run(host="127.0.0.1", port=80, debug=True, reloader=True)
 
 
 
